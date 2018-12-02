@@ -11,12 +11,11 @@ void setup() {
 }
 
 void loop() {
-
-  while(myESP.available() > 0) {
-     Serial.println(myESP.read());
+  if (Serial.available()) {
+    myESP.write("Tª4100500000MC9--");
+    while(myESP.available() > 0) {
+      Serial.println(myESP.read());
+    }
   }
-  Serial.println("wait...");
-  delay(1000) ;
-
   
 }
